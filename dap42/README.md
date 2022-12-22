@@ -4,4 +4,4 @@ The dap42 project is an open-source firmware and hardware design for an inexpens
 
 dap42 is created by [Devan Lai](https://github.com/devanlai).
 
-This folder is forked from https://github.com/devanlai/dap42 and added config folder `src/stm32f042/breadboard`.
+This folder is forked from https://github.com/devanlai/dap42, and add config folder `src/stm32f042/breadboard`.
