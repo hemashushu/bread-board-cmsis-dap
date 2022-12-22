@@ -38,11 +38,14 @@ void blinky()
     // initialize the LED pin
     uint32_t led_pin_number = 1;
 
+    const uint32_t GPIO_MODER_Msk = 0x3;   // 0b11
+    const uint32_t GPIO_OSPEEDR_Msk = 0x3; // 0b11
+
     // RM0091 8.4.12 GPIO register map
-    GPIOB->MODER &= ~(0x3 << (led_pin_number * 2));   // clear bits
-    GPIOB->MODER |= (0x1 << (led_pin_number * 2));    // set bits to 0x01, set mode to `output`
-    GPIOB->OSPEEDR &= ~(0x3 << (led_pin_number * 2)); // clear bits, set speed to `low`
-    GPIOB->OTYPER &= ~(1 << led_pin_number);          // clear bits, set output type to `push-pull`
+    GPIOB->MODER &= ~(GPIO_MODER_Msk << (led_pin_number * 2));     // clear bits
+    GPIOB->MODER |= (0x1 << (led_pin_number * 2));                 // set mode to `output`
+    GPIOB->OSPEEDR &= ~(GPIO_OSPEEDR_Msk << (led_pin_number * 2)); // clear bits, default speed to `low`
+    GPIOB->OTYPER &= ~(1 << led_pin_number);                       // clear bits, default output type to `push-pull`
 
     while (1)
     {

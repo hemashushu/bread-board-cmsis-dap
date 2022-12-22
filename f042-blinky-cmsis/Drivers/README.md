@@ -12,3 +12,9 @@ from `STM32Cube/Repository/STM32Cube_FW_F0_V1.11.3/Drivers/CMSIS/Device/ST/STM32
 - system_stm32f0xx.h
 
 To keep things simple, the file `system_stm32f0xx.h` has been renamed to `system_stm32f0xx-ORIGIN.h` and the current file `system_stm32f0xx.h` is empty.
+
+from `STM32Cube/Repository/STM32Cube_FW_F0_V1.11.3/Drivers/CMSIS/Device/ST/STM32F0xx/Source/Templates/gcc`
+
+- startup_stm32f042x6.s
+
+For reference purposes only.

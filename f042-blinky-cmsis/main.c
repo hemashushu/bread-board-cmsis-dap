@@ -7,7 +7,7 @@
  */
 #include <stdint.h>
 
-#include "cmsis/stm32f042x6.h"
+#include "stm32f042x6.h"
 
 void blinky()
 {
@@ -19,10 +19,13 @@ void blinky()
     // initialize the LED pin
     uint32_t led_pin_number = 1;
 
-    GPIOB->MODER &= ~(0x3 << (led_pin_number * 2));   // clear bits
-    GPIOB->MODER |= (0x1 << (led_pin_number * 2));    // set bits to 0x01, set mode to `output`
-    GPIOB->OSPEEDR &= ~(0x3 << (led_pin_number * 2)); // clear bits, set speed to `low`
-    GPIOB->OTYPER &= ~(1 << led_pin_number);          // clear bits, set output type to `push-pull`
+    const uint32_t GPIO_MODER_Msk = 0x3;   // 0b11
+    const uint32_t GPIO_OSPEEDR_Msk = 0x3; // 0b11
+
+    GPIOB->MODER &= ~(GPIO_MODER_Msk << (led_pin_number * 2));     // clear bits
+    GPIOB->MODER |= (0x1 << (led_pin_number * 2));                 // set mode to `output`
+    GPIOB->OSPEEDR &= ~(GPIO_OSPEEDR_Msk << (led_pin_number * 2)); // clear bits, default speed to `low`
+    GPIOB->OTYPER &= ~(1 << led_pin_number);                       // clear bits, default output type to `push-pull`
 
     while (1)
     {
