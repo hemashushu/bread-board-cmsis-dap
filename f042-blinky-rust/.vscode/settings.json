@@ -1,0 +1,8 @@
+{
+    // for preventing the rust-analyzer prompt "can't find crate for `test`" which cause by the `#![no_std]`
+    "rust-analyzer.checkOnSave.allTargets": false,
+
+    "rust-analyzer.cargo.target": "thumbv6m-none-eabi",
+    "cortex-debug.openocdPath": "/usr/bin/openocd",
+    "cortex-debug.variableUseNaturalFormat": false
+}

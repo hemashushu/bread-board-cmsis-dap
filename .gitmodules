@@ -1,0 +1,3 @@
+[submodule "dap42/libopencm3"]
+	path = dap42/libopencm3
+	url = https://github.com/libopencm3/libopencm3.git

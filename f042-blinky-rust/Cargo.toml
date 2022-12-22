@@ -1,0 +1,15 @@
+[package]
+name = "blinky"
+version = "0.1.0"
+edition = "2021"
+
+[profile.dev]
+# note:
+# key name is `profile.dev` not `profile.debug`
+panic = "abort"
+
+[profile.release]
+# opt-level = 'z'
+# lto = true
+panic = "abort"
+debug = true

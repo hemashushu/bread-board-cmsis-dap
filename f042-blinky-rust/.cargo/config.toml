@@ -1,0 +1,36 @@
+[build]
+target = "thumbv6m-none-eabi"
+
+# target = "thumbv6m-none-eabi"     # Cortex-M0 and Cortex-M0+              # e.g. STM32F0, STM32L0, STM32G0, RP2040
+# target = "thumbv7m-none-eabi"     # Cortex-M3                             # e.g. STM32F1, STM32L1
+# target = "thumbv7em-none-eabi"    # Cortex-M4 and Cortex-M7 (no FPU)      #
+# target = "thumbv7em-none-eabihf"  # Cortex-M4F and Cortex-M7F (with FPU)  # e.g. STM32F3, STM32F4, STM32L4, STM32G4
+
+# [target.thumbv7m-none-eabi]
+# runner = "qemu-system-arm -cpu cortex-m3 -machine lm3s6965evb -nographic -semihosting-config enable=on,target=native -kernel"
+#
+# ## custom flags for `rustc`
+#
+# rustflags = [
+#     "-C",
+#     "link-arg=-Tlinker.ld",
+#     # "-C", "other-arg=other-value"
+# ]
+#
+# or, write into `./build.rs`, e.g.
+#
+# ```rust
+# println!("cargo:rustc-link-arg=-Clink-arg=-Tsrc/linker.ld");
+# ```
+#
+# or, specified in CLI, e.g.
+#
+# `$ cargo rustc -- -C link-arg=-Tlinker.ld`
+#
+# https://doc.rust-lang.org/cargo/reference/build-scripts.html#rustc-link-arg
+# https://doc.rust-lang.org/cargo/reference/config.html
+rustflags = [
+    "-C",
+    "link-arg=-Tlinker.ld",
+    # "-C", "other-arg=other-value"
+]

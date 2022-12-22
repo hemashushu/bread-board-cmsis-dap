@@ -1,0 +1,21 @@
+# build output dir
+build/
+target/
+
+# `cortex-debug` state files
+.cortex-debug.*
+
+# object files
+*.o
+*.bin
+*.elf
+
+*.d
+*.axf
+*.map
+
+dap42/src/local.mk
+
+# others
+.DS_Store
+_TODO/

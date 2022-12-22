@@ -1,0 +1,13 @@
+[toolchain]
+channel = "stable"
+# channel = "nightly"
+components = [ "llvm-tools-preview", "rust-src", "rustfmt"]
+targets = [ "thumbv6m-none-eabi" ]
+
+# target = ["thumbv6m-none-eabi"]     # Cortex-M0 and Cortex-M0+              # e.g. STM32F0, STM32L0, STM32G0, RP2040
+# target = ["thumbv7m-none-eabi"]     # Cortex-M3                             # e.g. STM32F1, STM32L1
+# target = ["thumbv7em-none-eabi"]    # Cortex-M4 and Cortex-M7 (no FPU)      #
+# target = ["thumbv7em-none-eabihf"]  # Cortex-M4F and Cortex-M7F (with FPU)  # e.g. STM32F3, STM32F4, STM32L4, STM32G4
+#
+# install target:
+# `$ rustup target add thumbv6m-none-eabi`
