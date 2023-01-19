@@ -18,12 +18,13 @@ rm main.bin
 arm-none-eabi-gcc \
     -mcpu=cortex-m0 \
     -mthumb \
-    -Wall -g \
+    -Wall \
+    -g \
     --specs=nosys.specs \
     -nostartfiles \
     -Wl,-T,linker.ld \
     -o main.elf \
-    main.c
+    startup.c main.c
 
 arm-none-eabi-size main.elf
 arm-none-eabi-objcopy -O binary -S main.elf main.bin

@@ -18,9 +18,10 @@ rm main.bin
 arm-none-eabi-gcc \
     -mcpu=cortex-m0 \
     -mthumb \
-    -Wall -g \
-    -I Drivers/CMSIS/Include \
-    -I Drivers/CMSIS/Device/ST/STM32F0xx/Include \
+    -Wall \
+    -g \
+    -I vendor-pac/Drivers/CMSIS/Include \
+    -I vendor-pac/Drivers/CMSIS/Device/ST/STM32F0xx/Include \
     --specs=nosys.specs \
     -nostartfiles \
     -Wl,-T,linker.ld \

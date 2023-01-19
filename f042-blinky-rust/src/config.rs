@@ -9,4 +9,4 @@ use crate::common::{Pin, Port};
 /**
  * note: set output to `0` to turn on builtin LED
  */
-pub static BUILTIN_LED_PIN: Pin = Pin::new(Port::B, 1);
+pub static BUILTIN_LED_PIN: Pin = Pin::new(Port::A, 5);
